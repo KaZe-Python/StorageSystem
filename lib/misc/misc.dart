@@ -1,0 +1,1 @@
+export 'seccard.dart';
