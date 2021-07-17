@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 class SecCard extends StatefulWidget {
   const SecCard(
       {Key? key,
+      required this.index,
       required this.title,
       required this.icon,
       required this.subtitle,
       required this.moveToSection})
       : super(key: key);
 
+  final int index;
   final String title;
   final String subtitle;
   final Widget icon;
-  final Function moveToSection;
+  final void Function(int index) moveToSection;
 
   @override
   _SecCardState createState() => _SecCardState();
@@ -31,7 +33,7 @@ class _SecCardState extends State<SecCard> {
       Row(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
         TextButton(
           child: const Text("Open Section"),
-          onPressed: widget.moveToSection(),
+          onPressed: () => widget.moveToSection(widget.index),
         ),
         const SizedBox(width: 8),
         TextButton(onPressed: () {}, child: const Text("Try Button 2")),

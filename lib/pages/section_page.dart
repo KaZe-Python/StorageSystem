@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SectionPage extends StatefulWidget {
-  const SectionPage({Key? key}) : super(key: key);
+  const SectionPage({Key? key, required this.index}) : super(key: key);
+
+  final int index;
 
   @override
   _SectionPageState createState() => _SectionPageState();
@@ -10,6 +12,10 @@ class SectionPage extends StatefulWidget {
 class _SectionPageState extends State<SectionPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    int i = widget.index;
+    return Scaffold(
+      appBar: AppBar(title: Text("Section Page")),
+      body: Text("$i"),
+    );
   }
 }
