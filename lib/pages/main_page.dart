@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'section_page.dart';
+import 'package:storage_system/utils.dart';
+import 'sections.dart';
 import 'package:storage_system/misc/seccard.dart';
 
 class MainPage extends StatefulWidget {
@@ -13,7 +14,9 @@ class _MainPageState extends State<MainPage> {
   void changePage(int i) {
     Navigator.of(context)
         .push(MaterialPageRoute<void>(builder: (BuildContext context) {
-      return SectionPage(index: i);
+      return Sections(
+        index: i,
+      );
     }));
   }
 
